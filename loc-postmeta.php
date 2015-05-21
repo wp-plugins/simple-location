@@ -23,6 +23,7 @@ function slocbox_setup() {
 /* Create location meta boxes to be displayed on the post editor screen. */
 function sloc_locbox_add_postmeta_boxes() {
   $screens = array( 'post', 'page' );
+  $screens = apply_filters('sloc_post_types', $screens);
   foreach ( $screens as $screen ) {
     add_meta_box(
       'locationbox-meta',      // Unique ID
